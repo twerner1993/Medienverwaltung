@@ -24,5 +24,8 @@ namespace Medienverwaltung.Models
         public System.Data.Entity.DbSet<Medienverwaltung.Models.Interpret> Interprets { get; set; }
 
         public System.Data.Entity.DbSet<Medienverwaltung.Models.Titel> Titels { get; set; }
+
+        public System.Data.Entity.DbSet<Medienverwaltung.Models.Kopie> Kopies { get; set; }
+
     }
 }

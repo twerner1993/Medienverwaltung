@@ -16,5 +16,7 @@ namespace Medienverwaltung.Models
 
         public virtual Interpret TitelInterpret { get; set; }
         public virtual Typ TitelTyp { get; set; }
+        public virtual ICollection<Kopie> Kopies { get; set; }
+
     }
 }

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Medienverwaltung.Models.Kopie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titel.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenutzerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Typ)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titel.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenutzerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Typ)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KopieId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KopieId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KopieId })
+        </td>
+    </tr>
+}
+
+</table>

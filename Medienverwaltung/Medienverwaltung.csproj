@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterpretController.cs" />
+    <Compile Include="Controllers\KopieController.cs" />
     <Compile Include="Controllers\TitelController.cs" />
     <Compile Include="Controllers\TitelViewController.cs" />
     <Compile Include="Controllers\TypController.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Interpret.cs" />
+    <Compile Include="Models\Kopie.cs" />
     <Compile Include="Models\Titel.cs" />
     <Compile Include="Models\TitelViewModel.cs" />
     <Compile Include="Models\Typ.cs" />
@@ -240,6 +242,11 @@
     <Content Include="Views\Titel\Edit.cshtml" />
     <Content Include="Views\Titel\Index.cshtml" />
     <Content Include="Views\TitelView\Index.cshtml" />
+    <Content Include="Views\Kopie\Create.cshtml" />
+    <Content Include="Views\Kopie\Delete.cshtml" />
+    <Content Include="Views\Kopie\Details.cshtml" />
+    <Content Include="Views\Kopie\Edit.cshtml" />
+    <Content Include="Views\Kopie\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,7 +272,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>26415</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
