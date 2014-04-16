@@ -130,8 +130,21 @@ namespace Medienverwaltung.Controllers
         // POST: /Interpret/Select
         [HttpPost, ActionName("Select")]
         [ValidateAntiForgeryToken]
-        public ActionResult Select([Bind(Include="InterpredId")] IEnumerable<SelectListItem> item){
+        public ActionResult Select([Bind(Include="InterpretId,Name,Beschreibung,Gruendung")] Interpret interpret){
             return View();
+        }
+
+        // GET: /Interpret/Exists
+        public bool Exists(string name)
+        {
+            foreach (var item in db.Interprets)
+            {
+                if (item.Name == name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         protected override void Dispose(bool disposing)

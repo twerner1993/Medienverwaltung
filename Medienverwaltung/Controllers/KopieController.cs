@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Medienverwaltung.Controllers
 {
+    [Authorize]
     public class KopieController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

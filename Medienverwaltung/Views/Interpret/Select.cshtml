@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Medienverwaltung.Models.Interpret>
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>Interpret auswählen</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.DisplayNameFor(model => model.InterpretId)
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.InterpretId)
+                @*@Html.DropDownList("", String.Empty)*@
+                @*@Html.ValidationMessageFor(model => model.TitelId)*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="weiter" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

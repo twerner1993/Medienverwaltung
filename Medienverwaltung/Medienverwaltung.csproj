@@ -241,13 +241,17 @@
     <Content Include="Views\Titel\Details.cshtml" />
     <Content Include="Views\Titel\Edit.cshtml" />
     <Content Include="Views\Titel\Index.cshtml" />
-    <Content Include="Views\TitelView\Index.cshtml" />
     <Content Include="Views\Kopie\Create.cshtml" />
     <Content Include="Views\Kopie\Delete.cshtml" />
     <Content Include="Views\Kopie\Details.cshtml" />
     <Content Include="Views\Kopie\Edit.cshtml" />
     <Content Include="Views\Kopie\Index.cshtml" />
     <Content Include="Views\Interpret\Select.cshtml" />
+    <Content Include="Views\TitelView\Create.cshtml" />
+    <Content Include="Views\TitelView\Delete.cshtml" />
+    <Content Include="Views\TitelView\Details.cshtml" />
+    <Content Include="Views\TitelView\Edit.cshtml" />
+    <Content Include="Views\TitelView\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

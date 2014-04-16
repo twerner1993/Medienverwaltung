@@ -8,6 +8,9 @@ namespace Medienverwaltung.Models
 {
     public class TitelViewModel
     {
+        [Key]
+        public int TitelId { get; set; }
+
         [Required]
         [Display(Name="Name")]
         public string Name { get; set; }
@@ -16,11 +19,11 @@ namespace Medienverwaltung.Models
         [Display(Name="Interpret")]
         public string Interpret { get; set; } //Name aus Interpret-Model
 
-        [Required]
-        [Display(Name="Typ")]
-        public string Typ { get; set; }
+        public int TypId { get; set; }
 
         public DateTime Erscheinung { get; set; }
         public string Beschreibung { get; set; }
+
+        public virtual Typ Typ { get; set; }
     }
 } 
