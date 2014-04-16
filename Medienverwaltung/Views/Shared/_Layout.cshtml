@@ -26,6 +26,7 @@
                     <li>@Html.ActionLink("Titel", "Index", "Titel")</li>
                     <li>@Html.ActionLink("Info", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Kopien", "Index", "Kopie")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,6 +37,21 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Medienverwaltung Werner2013, Torsten Werner</p>
+            @*@using Microsoft.AspNet.Identity;
+            @using Microsoft.AspNet.Identity.EntityFramework;
+            @using Medienverwaltung.Models;
+            @{
+                if (Request.IsAuthenticated && User != null)
+                {
+                    var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+                    var currentUser = manager.FindById(User.Identity.GetUserId());
+
+                    if (currentUser != null) { 
+                    <p>UserId: @currentUser.Id</p>
+                    <p>Email: @currentUser.Email</p>
+                    }
+                }
+            }*@
         </footer>
     </div>
 

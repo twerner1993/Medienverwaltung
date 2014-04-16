@@ -119,6 +119,21 @@ namespace Medienverwaltung.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: /Interpret/Select
+        public ActionResult Select()
+        {
+            //ViewBag.InterpretId = new SelectList(db.Interprets, "InterpretId", "Name");
+            var interprets = db.Interprets;
+            return View(interprets);
+        }
+
+        // POST: /Interpret/Select
+        [HttpPost, ActionName("Select")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Select([Bind(Include="InterpredId")] IEnumerable<SelectListItem> item){
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

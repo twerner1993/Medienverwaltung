@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using Medienverwaltung.Models;
 
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace Medienverwaltung.Controllers
 {
     public class KopieController : Controller
@@ -18,6 +21,7 @@ namespace Medienverwaltung.Controllers
         public ActionResult Index()
         {
             var kopies = db.Kopies.Include(k => k.Titel);
+            var users = db.Users.Include(u => u.UserName);
             return View(kopies.ToList());
         }
 
@@ -48,10 +52,12 @@ namespace Medienverwaltung.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="KopieId,TitelId,BenutzerId,Typ")] Kopie kopie)
+        public ActionResult Create([Bind(Include="KopieId,TitelId,Typ")] Kopie kopie)
         {
             if (ModelState.IsValid)
             {
+                var currentUser = User.Identity.GetUserId();
+                kopie.UserProfile = db.Users.Find(currentUser);
                 db.Kopies.Add(kopie);
                 db.SaveChanges();
                 return RedirectToAction("Index");

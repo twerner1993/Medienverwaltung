@@ -10,6 +10,8 @@ namespace Medienverwaltung.Models
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtstag { get; set; }
+
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
